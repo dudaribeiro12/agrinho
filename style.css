@@ -7,7 +7,5 @@ header {
   font-weight: bold;             /* Texto em negrito */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
   width: 100%;                   /* Ocupa toda a largura da página */
-}
-body {
-  padding-top: 80px; /* ajuste conforme a altura do cabeçalho */
+  padding-top: 80px; /* ajuste conforme a altura do cabeçalho no topo da pagina */
 }
