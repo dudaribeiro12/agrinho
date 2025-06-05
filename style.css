@@ -1,0 +1,10 @@
+header {
+  background-color: green;       /* Fundo verde */
+  color: white;                  /* Texto branco */
+  text-align: center;            /* Centraliza o texto */
+  padding: 20px 0;               /* Espaçamento interno */
+  font-size: 32px;               /* Tamanho do texto */
+  font-weight: bold;             /* Texto em negrito */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  width: 100%;                   /* Ocupa toda a largura da página */
+}
