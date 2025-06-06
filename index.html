@@ -6,139 +6,167 @@
   <title>Projeto Agrinho 2025</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap" rel="stylesheet" />
 
   <style>
-    /* Reset básico */
-    * {
+    /* Reset */
+    *, *::before, *::after {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
-
-    body {
-      background-color: #f5f5f5;
+    body, h1, h2, p, a {
+      margin: 0; padding: 0;
       font-family: 'Roboto', sans-serif;
-      color: #2d662d;
+      color: #2f4f2f;
+    }
+    body {
+      background: #e8f5e9;
+      line-height: 1.6;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 20px;
-      line-height: 1.6;
+      padding: 2rem 1rem 4rem;
     }
 
+    /* Header com gradiente e sombra */
     header {
-      background-color: #55c655;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 3.5rem;
+      background: linear-gradient(90deg, #4caf50 0%, #81c784 100%);
+      color: #fff;
       width: 100%;
-      max-width: 900px;
-      padding: 25px 0;
+      max-width: 960px;
       text-align: center;
-      color: white;
-      font-family: 'Anton', sans-serif;
-      font-size: 3rem;
-      font-weight: bold;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      margin-bottom: 30px;
-      user-select: none;
-    }
-
-    .texto-agrinho {
-      background-color: white;
-      max-width: 900px;
-      padding: 30px 40px;
-      margin-bottom: 40px;
+      padding: 2rem 0;
       border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      font-size: 1.2rem;
-      text-align: center;
-      color: #2d662d;
-      line-height: 1.7;
-      white-space: pre-line; /* para respeitar quebras de linha */
+      box-shadow: 0 5px 15px rgba(72, 180, 97, 0.6);
+      user-select: none;
+      margin-bottom: 2.5rem;
     }
 
+    /* Texto principal em cartão */
+    .texto-agrinho {
+      background: #fff;
+      max-width: 960px;
+      border-radius: 16px;
+      padding: 2rem 3rem;
+      box-shadow: 0 8px 24px rgba(46, 125, 50, 0.15);
+      font-size: 1.15rem;
+      color: #2e7d32;
+      text-align: justify;
+      white-space: pre-line;
+      line-height: 1.8;
+      margin-bottom: 3rem;
+      transition: box-shadow 0.3s ease;
+    }
+    .texto-agrinho:hover {
+      box-shadow: 0 12px 40px rgba(46, 125, 50, 0.25);
+    }
+
+    /* Container de imagens flex com gap e centralizado */
     .imagens-container {
       display: flex;
-      gap: 25px;
       flex-wrap: wrap;
+      gap: 2rem;
       justify-content: center;
-      max-width: 900px;
-      margin-bottom: 35px;
+      max-width: 960px;
+      margin-bottom: 3rem;
     }
 
+    /* Estilo das imagens com borda e sombra */
     .imagens-container img {
-      width: 300px;
+      width: 320px;
       max-width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(46, 125, 50, 0.2);
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
+      transform: translateY(25px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+      cursor: pointer;
+      will-change: transform, opacity;
+      filter: drop-shadow(0 4px 3px rgba(46,125,50,0.15));
+      border: 3px solid transparent;
     }
-
     .imagens-container img.aparecer {
       opacity: 1;
       transform: translateY(0);
     }
+    .imagens-container img:hover {
+      transform: translateY(-8px);
+      border-color: #4caf50;
+      box-shadow: 0 14px 30px rgba(46, 125, 50, 0.35);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
 
+    /* Links estilo botão */
     .links {
-      max-width: 900px;
-      margin-bottom: 40px;
-      font-size: 1rem;
+      max-width: 960px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      text-align: center;
-      font-weight: 600;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 2rem;
     }
-
     .links a {
-      color: #2d662d;
+      font-weight: 600;
+      color: #388e3c;
       text-decoration: none;
-      padding: 8px 12px;
-      border: 2px solid #55c655;
-      border-radius: 8px;
-      transition: background-color 0.3s, color 0.3s;
+      padding: 0.65rem 1.5rem;
+      border: 2.5px solid #4caf50;
+      border-radius: 50px;
+      background-color: #dcedc8;
+      box-shadow: 0 6px 15px rgba(72, 180, 97, 0.25);
+      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+      width: 100%;
+      max-width: 350px;
+      text-align: center;
+      user-select: none;
     }
-
     .links a:hover,
     .links a:focus {
-      background-color: #55c655;
-      color: white;
+      background-color: #4caf50;
+      color: #fff;
+      box-shadow: 0 8px 25px rgba(72, 180, 97, 0.5);
       outline: none;
     }
 
+    /* Rodapé */
     footer {
-      background-color: #55c655;
-      color: white;
-      text-align: center;
-      padding: 18px 10px;
-      font-weight: bold;
-      font-size: 1rem;
+      max-width: 960px;
       width: 100%;
-      max-width: 900px;
-      border-radius: 0 0 8px 8px;
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      padding: 1.3rem 1rem;
+      background: #4caf50;
+      color: #f1f8e9;
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 0 0 12px 12px;
+      text-align: center;
+      box-shadow: 0 -3px 15px rgba(46,125,50,0.5);
       user-select: none;
+      position: relative;
+      bottom: 0;
     }
 
     /* Responsividade */
-    @media (max-width: 650px) {
+    @media (max-width: 720px) {
       header {
-        font-size: 2.2rem;
-        padding: 20px 0;
+        font-size: 2.8rem;
+        padding: 1.5rem 0;
       }
       .texto-agrinho {
-        padding: 20px;
+        padding: 1.5rem 2rem;
         font-size: 1rem;
       }
       .imagens-container {
-        flex-direction: column;
-        align-items: center;
+        gap: 1.5rem;
       }
       .imagens-container img {
         width: 90%;
+      }
+      .links a {
+        max-width: 100%;
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -147,27 +175,37 @@
 
   <header>AGRINHO 2025</header>
 
-  <div class="texto-agrinho">
-    Festejar a educação no Paraná é uma tradição do Programa Agrinho, principal iniciativa de responsabilidade social do Sistema FAEP.<br><br>
+  <section class="texto-agrinho" tabindex="0" aria-label="Descrição do Programa Agrinho">
+    Festejar a educação no Paraná é uma tradição do Programa Agrinho, principal iniciativa de responsabilidade social do Sistema FAEP.
 
-    Ao longo dos 30 anos de história que serão completos em 2025, o Agrinho já premiou milhares de estudantes e professores que se destacaram na missão de fazer o conhecimento extrapolar os limites das salas de aula.<br><br>
+    <br><br>
 
-    Neste ano, o tema do concurso é “Festejando a conexão campo-cidade”, que aponta para a necessidade de entender as relações de interdependência entre esses dois mundos.<br><br>
+    Ao longo dos 30 anos de história que serão completos em 2025, o Agrinho já premiou milhares de estudantes e professores que se destacaram na missão de fazer o conhecimento extrapolar os limites das salas de aula.
+
+    <br><br>
+
+    Neste ano, o tema do concurso é “Festejando a conexão campo-cidade”, que aponta para a necessidade de entender as relações de interdependência entre esses dois mundos.
+
+    <br><br>
 
     <strong>O Programa Agrinho</strong><br>
-    Agrinho é o maior programa de responsabilidade social do Sistema FAEP, resultado da parceria entre o SENAR-PR, FAEP, o governo do Estado do Paraná, mediante as Secretarias de Estado da Educação e do Esporte, da Agricultura e do Abastecimento, da Justiça, Família e Trabalho e do Desenvolvimento Sustentável e do Turismo, bem como com a colaboração das Prefeituras municipais e diversas empresas e instituições públicas e privadas.<br><br>
+    Agrinho é o maior programa de responsabilidade social do Sistema FAEP, resultado da parceria entre o SENAR-PR, FAEP, o governo do Estado do Paraná, mediante as Secretarias de Estado da Educação e do Esporte, da Agricultura e do Abastecimento, da Justiça, Família e Trabalho e do Desenvolvimento Sustentável e do Turismo, bem como com a colaboração das Prefeituras municipais e diversas empresas e instituições públicas e privadas.
 
-    O Programa completa 26 anos de trabalhos no Paraná. Concebido em 1995, foi à campo em 1996, levando às escolas da rede pública de ensino uma proposta pedagógica baseada em visão complexa, na inter e transdisciplinaridade e na pedagogia da pesquisa. Anualmente, o programa envolve a participação de aproximadamente 800 mil crianças e mais de 50 mil professores da educação infantil, do ensino fundamental e da educação especial, estando presente em todos os municípios do Estado.<br><br>
+    <br><br>
+
+    O Programa completa 26 anos de trabalhos no Paraná. Concebido em 1995, foi à campo em 1996, levando às escolas da rede pública de ensino uma proposta pedagógica baseada em visão complexa, na inter e transdisciplinaridade e na pedagogia da pesquisa. Anualmente, o programa envolve a participação de aproximadamente 800 mil crianças e mais de 50 mil professores da educação infantil, do ensino fundamental e da educação especial, estando presente em todos os municípios do Estado.
+
+    <br><br>
 
     Criado com o objetivo de levar informações sobre saúde e segurança pessoal e ambiental, principalmente às crianças do meio rural, o Programa se consolida como instrumento eficiente na operacionalização de temáticas de relevância social da contemporaneidade dentro dos currículos escolares. Especialistas altamente qualificados, de renome nacional e internacional, de diversos grupos de pesquisa que trabalham em rede, fundamentam as informações que compõem o material didático preparado com exclusividade para o Programa. Pelo incentivo à pesquisa, defende-se uma educação crítica, criativa, que desenvolva a autonomia e a capacidade de professores e alunos assumirem-se como pesquisadores e produtores de novos conhecimentos. Desde seu início em 1996, os professores e alunos recebem com entusiasmo e dedicação as atividades do Programa Agrinho, a cada ano, esse trabalho vem se superando em qualidade e criatividade.
-  </div>
+  </section>
 
-  <div class="imagens-container">
+  <section class="imagens-container" aria-label="Imagens do Programa Agrinho">
     <img src="img/img1.jpg" alt="Projeto Agrinho" />
     <img src="img/cidade.jpeg" alt="Cidade e campo" />
-  </div>
+  </section>
 
-  <div class="links">
+  <nav class="links" aria-label="Links relacionados ao Programa Agrinho">
     <a href="https://www.flickr.com/photos/agenciabrasilia/53765054880" target="_blank" rel="noopener noreferrer">
       Agência Brasília via Flickr (Imagem 1)
     </a>
@@ -177,28 +215,21 @@
     <a href="https://pxhere.com/pt/photo/1516021" target="_blank" rel="noopener noreferrer">
       pxhere.com (Imagem 2)
     </a>
-  </div>
+  </nav>
 
   <footer>
     Desenvolvido por Maria Eduarda Ribeiro Inczmionka
   </footer>
 
   <script>
-    // Seleciona todas as imagens da div de imagens
     const imagens = document.querySelectorAll('.imagens-container img');
 
-    // Função para adicionar a classe 'aparecer' com delay entre as imagens
-    imagens.forEach((img, index) => {
+    imagens.forEach((img, i) => {
       setTimeout(() => {
         img.classList.add('aparecer');
-      }, index * 800); // 800ms entre uma imagem e outra
+      }, i * 900);
     });
   </script>
 
 </body>
 </html>
-
-
-
-
- 
