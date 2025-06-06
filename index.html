@@ -4,85 +4,142 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projeto Agrinho 2025</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto&display=swap" rel="stylesheet" />
+
   <style>
-    /* Reset and base */
+    /* Reset básico */
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
+
     body {
       background-color: #f5f5f5;
-      margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
+      color: #2d662d;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-height: 100vh;
-      color: #2d662d;
       padding: 20px;
+      line-height: 1.6;
     }
+
     header {
       background-color: #55c655;
       width: 100%;
       max-width: 900px;
-      padding: 20px 0;
+      padding: 25px 0;
       text-align: center;
       color: white;
-      font-size: 2.5rem;
+      font-family: 'Anton', sans-serif;
+      font-size: 3rem;
       font-weight: bold;
       border-radius: 8px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      user-select: none;
     }
+
     .texto-agrinho {
       background-color: white;
       max-width: 900px;
-      padding: 25px 30px;
-      margin: 30px 0;
+      padding: 30px 40px;
+      margin-bottom: 40px;
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      font-size: 1.15rem;
-      line-height: 1.6;
+      font-size: 1.2rem;
       text-align: center;
+      color: #2d662d;
+      line-height: 1.7;
+      white-space: pre-line; /* para respeitar quebras de linha */
     }
+
     .imagens-container {
       display: flex;
-      gap: 20px;
+      gap: 25px;
       flex-wrap: wrap;
       justify-content: center;
       max-width: 900px;
-      margin-bottom: 15px;
+      margin-bottom: 35px;
     }
+
     .imagens-container img {
       width: 300px;
       max-width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
+
+    .imagens-container img.aparecer {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     .links {
       max-width: 900px;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       font-size: 1rem;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 12px;
       text-align: center;
+      font-weight: 600;
     }
+
     .links a {
       color: #2d662d;
-      text-decoration: underline;
-      word-break: break-word;
+      text-decoration: none;
+      padding: 8px 12px;
+      border: 2px solid #55c655;
+      border-radius: 8px;
+      transition: background-color 0.3s, color 0.3s;
     }
+
+    .links a:hover,
+    .links a:focus {
+      background-color: #55c655;
+      color: white;
+      outline: none;
+    }
+
     footer {
       background-color: #55c655;
       color: white;
       text-align: center;
-      padding: 20px 10px;
+      padding: 18px 10px;
       font-weight: bold;
       font-size: 1rem;
       width: 100%;
       max-width: 900px;
       border-radius: 0 0 8px 8px;
       box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-      margin-top: auto;
+      user-select: none;
+    }
+
+    /* Responsividade */
+    @media (max-width: 650px) {
+      header {
+        font-size: 2.2rem;
+        padding: 20px 0;
+      }
+      .texto-agrinho {
+        padding: 20px;
+        font-size: 1rem;
+      }
+      .imagens-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .imagens-container img {
+        width: 90%;
+      }
     }
   </style>
 </head>
@@ -91,26 +148,24 @@
   <header>AGRINHO 2025</header>
 
   <div class="texto-agrinho">
-    Festejar a educação no Paraná é uma tradição do Programa Agrinho, principal iniciativa de responsabilidade social do Sistema FAEP.
-    Ao longo dos 30 anos de história que serão completos em 2025, o Agrinho já premiou milhares de estudantes e professores que se destacaram na missão de fazer o conhecimento extrapolar os limites das salas de aula.
-    Neste ano, o tema do concurso é “Festejando a conexão campo-cidade”, que aponta para a necessidade de entender as relações de interdependência entre esses dois mundos.
+    Festejar a educação no Paraná é uma tradição do Programa Agrinho, principal iniciativa de responsabilidade social do Sistema FAEP.<br><br>
+
+    Ao longo dos 30 anos de história que serão completos em 2025, o Agrinho já premiou milhares de estudantes e professores que se destacaram na missão de fazer o conhecimento extrapolar os limites das salas de aula.<br><br>
+
+    Neste ano, o tema do concurso é “Festejando a conexão campo-cidade”, que aponta para a necessidade de entender as relações de interdependência entre esses dois mundos.<br><br>
+
+    <strong>O Programa Agrinho</strong><br>
+    Agrinho é o maior programa de responsabilidade social do Sistema FAEP, resultado da parceria entre o SENAR-PR, FAEP, o governo do Estado do Paraná, mediante as Secretarias de Estado da Educação e do Esporte, da Agricultura e do Abastecimento, da Justiça, Família e Trabalho e do Desenvolvimento Sustentável e do Turismo, bem como com a colaboração das Prefeituras municipais e diversas empresas e instituições públicas e privadas.<br><br>
+
+    O Programa completa 26 anos de trabalhos no Paraná. Concebido em 1995, foi à campo em 1996, levando às escolas da rede pública de ensino uma proposta pedagógica baseada em visão complexa, na inter e transdisciplinaridade e na pedagogia da pesquisa. Anualmente, o programa envolve a participação de aproximadamente 800 mil crianças e mais de 50 mil professores da educação infantil, do ensino fundamental e da educação especial, estando presente em todos os municípios do Estado.<br><br>
+
+    Criado com o objetivo de levar informações sobre saúde e segurança pessoal e ambiental, principalmente às crianças do meio rural, o Programa se consolida como instrumento eficiente na operacionalização de temáticas de relevância social da contemporaneidade dentro dos currículos escolares. Especialistas altamente qualificados, de renome nacional e internacional, de diversos grupos de pesquisa que trabalham em rede, fundamentam as informações que compõem o material didático preparado com exclusividade para o Programa. Pelo incentivo à pesquisa, defende-se uma educação crítica, criativa, que desenvolva a autonomia e a capacidade de professores e alunos assumirem-se como pesquisadores e produtores de novos conhecimentos. Desde seu início em 1996, os professores e alunos recebem com entusiasmo e dedicação as atividades do Programa Agrinho, a cada ano, esse trabalho vem se superando em qualidade e criatividade.
   </div>
 
   <div class="imagens-container">
     <img src="img/img1.jpg" alt="Projeto Agrinho" />
     <img src="img/cidade.jpeg" alt="Cidade e campo" />
   </div>
-
-  <div class="texto-agrinho"></div>
-O Programa Agrinho
-Agrinho é o maior programa de responsabilidade social do Sistema FAEP, resultado da parceria entre o SENAR-PR, FAEP, o governo do Estado do Paraná, mediante as Secretarias de Estado da Educação e do Esporte, da Agricultura e do Abastecimento, da Justiça, Família e Trabalho e do Desenvolvimento Sustentável e do Turismo, bem como com a colaboração das Prefeituras municipais e diversas empresas e instituições públicas e privadas.
-
-O Programa completa 26 anos de trabalhos no Paraná. Concebido em 1995, foi à campo em 1996, levando às escolas da rede pública de ensino uma proposta pedagógica baseada em visão complexa, na inter e transdisciplinaridade e na pedagogia da pesquisa. Anualmente, o programa envolve a participação de aproximadamente 800 mil crianças e mais de 50 mil professores da educação infantil, do ensino fundamental e da educação especial, estando presente em todos os municípios do Estado.
-
-Criado com o objetivo de levar informações sobre saúde e segurança pessoal e ambiental, principalmente às crianças do meio rural, o Programa se consolida como instrumento eficiente na operacionalização de temáticas de relevância social da contemporaneidade dentro dos currículos escolares. Especialistas altamente qualificados, de renome nacional e internacional, de diversos grupos de pesquisa que trabalham em rede, fundamentam as informações que compõem o material didático preparado com exclusividade para o Programa. Pelo incentivo à pesquisa, defende-se uma educação crítica, criativa, que desenvolva a autonomia e a capacidade de professores e alunos assumirem-se como pesquisadores e produtores de novos conhecimentos. Desde seu início em 1996, os professores e alunos recebem com entusiasmo e dedicação as atividades do Programa Agrinho, a cada ano, esse trabalho vem se superando em qualidade e criatividade.
- </div>
-
-
 
   <div class="links">
     <a href="https://www.flickr.com/photos/agenciabrasilia/53765054880" target="_blank" rel="noopener noreferrer">
@@ -128,8 +183,21 @@ Criado com o objetivo de levar informações sobre saúde e segurança pessoal e
     Desenvolvido por Maria Eduarda Ribeiro Inczmionka
   </footer>
 
+  <script>
+    // Seleciona todas as imagens da div de imagens
+    const imagens = document.querySelectorAll('.imagens-container img');
+
+    // Função para adicionar a classe 'aparecer' com delay entre as imagens
+    imagens.forEach((img, index) => {
+      setTimeout(() => {
+        img.classList.add('aparecer');
+      }, index * 800); // 800ms entre uma imagem e outra
+    });
+  </script>
+
 </body>
 </html>
+
 
 
 
