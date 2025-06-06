@@ -4,173 +4,85 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projeto Agrinho 2025</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap" rel="stylesheet" />
-
   <style>
-    /* Reset */
-    *, *::before, *::after {
+    /* Reset and base */
+    * {
       box-sizing: border-box;
     }
-    body, h1, h2, p, a {
-      margin: 0; padding: 0;
-      font-family: 'Roboto', sans-serif;
-      color: #2f4f2f;
-    }
     body {
-      background: #e8f5e9;
-      line-height: 1.5;
-      min-height: 100vh;
+      background-color: #f5f5f5;
+      margin: 0;
+      font-family: Arial, sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 2rem 1rem 4rem;
+      min-height: 100vh;
+      color: #2d662d;
+      padding: 20px;
     }
-
-    /* Header com gradiente e sombra */
     header {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
-      font-size: 3.5rem;
-      background: linear-gradient(90deg, #4caf50 0%, #81c784 100%);
-      color: #fff;
+      background-color: #55c655;
       width: 100%;
-      max-width: 960px;
+      max-width: 900px;
+      padding: 20px 0;
       text-align: center;
-      padding: 2rem 0;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(72, 180, 97, 0.6);
-      user-select: none;
-      margin-bottom: 2.5rem;
+      color: white;
+      font-size: 2.5rem;
+      font-weight: bold;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
-
-    /* Texto principal em cartão */
     .texto-agrinho {
-      background: #fff;
-      max-width: 960px;
-      border-radius: 16px;
-      padding: 2rem 3rem;
-      box-shadow: 0 8px 24px rgba(46, 125, 50, 0.15);
-      font-size: 1.1rem;
-      color: #2e7d32;
-      text-align: justify;
-      white-space: normal;
-      line-height: 1.5;
-      margin-bottom: 3rem;
-      transition: box-shadow 0.3s ease;
+      background-color: white;
+      max-width: 900px;
+      padding: 25px 30px;
+      margin: 30px 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      font-size: 1.15rem;
+      line-height: 1.6;
+      text-align: center;
     }
-    .texto-agrinho p {
-      margin-bottom: 1.2rem;
-    }
-    .texto-agrinho:hover {
-      box-shadow: 0 12px 40px rgba(46, 125, 50, 0.25);
-    }
-
-    /* Container de imagens flex com gap e centralizado */
     .imagens-container {
       display: flex;
+      gap: 20px;
       flex-wrap: wrap;
-      gap: 2rem;
       justify-content: center;
-      max-width: 960px;
-      margin-bottom: 3rem;
+      max-width: 900px;
+      margin-bottom: 15px;
     }
-
-    /* Estilo das imagens com borda e sombra */
     .imagens-container img {
-      width: 320px;
+      width: 300px;
       max-width: 100%;
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(46, 125, 50, 0.2);
-      opacity: 0;
-      transform: translateY(25px);
-      transition: opacity 0.9s ease, transform 0.9s ease;
-      cursor: pointer;
-      will-change: transform, opacity;
-      filter: drop-shadow(0 4px 3px rgba(46,125,50,0.15));
-      border: 3px solid transparent;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
-    .imagens-container img.aparecer {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .imagens-container img:hover {
-      transform: translateY(-8px);
-      border-color: #4caf50;
-      box-shadow: 0 14px 30px rgba(46, 125, 50, 0.35);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    }
-
-    /* Links estilo botão */
     .links {
-      max-width: 960px;
+      max-width: 900px;
+      margin-bottom: 30px;
+      font-size: 1rem;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
-      align-items: center;
-      margin-bottom: 2rem;
+      gap: 8px;
+      text-align: center;
     }
     .links a {
-      font-weight: 600;
-      color: #388e3c;
-      text-decoration: none;
-      padding: 0.65rem 1.5rem;
-      border: 2.5px solid #4caf50;
-      border-radius: 50px;
-      background-color: #dcedc8;
-      box-shadow: 0 6px 15px rgba(72, 180, 97, 0.25);
-      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-      width: 100%;
-      max-width: 350px;
-      text-align: center;
-      user-select: none;
+      color: #2d662d;
+      text-decoration: underline;
+      word-break: break-word;
     }
-    .links a:hover,
-    .links a:focus {
-      background-color: #4caf50;
-      color: #fff;
-      box-shadow: 0 8px 25px rgba(72, 180, 97, 0.5);
-      outline: none;
-    }
-
-    /* Rodapé */
     footer {
-      max-width: 960px;
-      width: 100%;
-      padding: 1.3rem 1rem;
-      background: #4caf50;
-      color: #f1f8e9;
-      font-weight: 700;
-      font-size: 1rem;
-      border-radius: 0 0 12px 12px;
+      background-color: #55c655;
+      color: white;
       text-align: center;
-      box-shadow: 0 -3px 15px rgba(46,125,50,0.5);
-      user-select: none;
-      position: relative;
-      bottom: 0;
-    }
-
-    /* Responsividade */
-    @media (max-width: 720px) {
-      header {
-        font-size: 2.8rem;
-        padding: 1.5rem 0;
-      }
-      .texto-agrinho {
-        padding: 1.5rem 2rem;
-        font-size: 1rem;
-      }
-      .imagens-container {
-        gap: 1.5rem;
-      }
-      .imagens-container img {
-        width: 90%;
-      }
-      .links a {
-        max-width: 100%;
-        font-size: 0.9rem;
-      }
+      padding: 20px 10px;
+      font-weight: bold;
+      font-size: 1rem;
+      width: 100%;
+      max-width: 900px;
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      margin-top: auto;
     }
   </style>
 </head>
@@ -178,46 +90,43 @@
 
   <header>AGRINHO 2025</header>
 
-  <section class="texto-agrinho" tabindex="0" aria-label="Descrição do Programa Agrinho">
+  <div class="texto-agrinho">
     Festejar a educação no Paraná é uma tradição do Programa Agrinho, principal iniciativa de responsabilidade social do Sistema FAEP.
+    Ao longo dos 30 anos de história que serão completos em 2025, o Agrinho já premiou milhares de estudantes e professores que se destacaram na missão de fazer o conhecimento extrapolar os limites das salas de aula.
+    Neste ano, o tema do concurso é “Festejando a conexão campo-cidade”, que aponta para a necessidade de entender as relações de interdependência entre esses dois mundos.
+  </div>
 
-    <p>Ao longo dos 30 anos de história que serão completos em 2025, o Agrinho já premiou milhares de estudantes e professores que se destacaram na missão de fazer o conhecimento extrapolar os limites das salas de aula.</p>
+  <div class="imagens-container">
+    <img src="img/img1.jpg" alt="Projeto Agrinho" />
+    <img src="img/cidade.jpeg" alt="Cidade e campo" />
+  </div>
 
-    <p>Neste ano, o tema do concurso é “Festejando a conexão campo-cidade”, que aponta para a necessidade de entender as relações de interdependência entre esses dois mundos.</p>
+  <div class="texto-agrinho"></div>
+O Programa Agrinho
+Agrinho é o maior programa de responsabilidade social do Sistema FAEP, resultado da parceria entre o SENAR-PR, FAEP, o governo do Estado do Paraná, mediante as Secretarias de Estado da Educação e do Esporte, da Agricultura e do Abastecimento, da Justiça, Família e Trabalho e do Desenvolvimento Sustentável e do Turismo, bem como com a colaboração das Prefeituras municipais e diversas empresas e instituições públicas e privadas.
 
-    <p><strong>O Programa Agrinho</strong><br>
-    Agrinho é o maior programa de responsabilidade social do Sistema FAEP, resultado da parceria entre o SENAR-PR, FAEP, o governo do Estado do Paraná, mediante as Secretarias de Estado da Educação e do Esporte, da Agricultura e do Abastecimento, da Justiça, Família e Trabalho e do Desenvolvimento Sustentável e do Turismo, bem como com a colaboração das Prefeituras municipais e diversas empresas e instituições públicas e privadas.</p>
+O Programa completa 26 anos de trabalhos no Paraná. Concebido em 1995, foi à campo em 1996, levando às escolas da rede pública de ensino uma proposta pedagógica baseada em visão complexa, na inter e transdisciplinaridade e na pedagogia da pesquisa. Anualmente, o programa envolve a participação de aproximadamente 800 mil crianças e mais de 50 mil professores da educação infantil, do ensino fundamental e da educação especial, estando presente em todos os municípios do Estado.
 
-    <p>O Programa completa 26 anos de trabalhos no Paraná. Concebido em 1995, foi à campo em 1996, levando às escolas da rede pública de ensino uma proposta pedagógica baseada em visão complexa, na inter e transdisciplinaridade e na pedagogia da pesquisa. Anualmente, o programa envolve a participação de aproximadamente 800 mil crianças e mais de 50 mil professores da educação infantil, do ensino fundamental e da educação especial, estando presente em todos os municípios do Estado.</p>
+Criado com o objetivo de levar informações sobre saúde e segurança pessoal e ambiental, principalmente às crianças do meio rural, o Programa se consolida como instrumento eficiente na operacionalização de temáticas de relevância social da contemporaneidade dentro dos currículos escolares. Especialistas altamente qualificados, de renome nacional e internacional, de diversos grupos de pesquisa que trabalham em rede, fundamentam as informações que compõem o material didático preparado com exclusividade para o Programa. Pelo incentivo à pesquisa, defende-se uma educação crítica, criativa, que desenvolva a autonomia e a capacidade de professores e alunos assumirem-se como pesquisadores e produtores de novos conhecimentos. Desde seu início em 1996, os professores e alunos recebem com entusiasmo e dedicação as atividades do Programa Agrinho, a cada ano, esse trabalho vem se superando em qualidade e criatividade.
+ </div>
 
-    <p>Criado com o objetivo de levar informações sobre saúde e segurança pessoal e ambiental, principalmente às crianças do meio rural, o Programa se consolida como instrumento eficiente na operacionalização de temáticas de relevância social da contemporaneidade dentro dos currículos escolares. Especialistas altamente qualificados, de renome nacional e internacional, de diversos grupos de pesquisa que trabalham em rede, fundamentam as informações que compõem o material didático preparado com exclusividade para o Programa. Pelo incentivo à pesquisa, defende-se uma educação crítica, criativa, que desenvolva a autonomia e a capacidade de professores e alunos assumirem-se como pesquisadores e produtores de novos conhecimentos. Desde seu início em 1996, os professores e alunos recebem com entusiasmo e dedicação as atividades do Programa Agrinho, a cada ano, esse trabalho vem se superando em qualidade e criatividade.</p>
-  </section>
 
-  <section class="imagens-container" aria-label="Imagens do Programa Agrinho">
-    <img src="https://i.imgur.com/8xJaCXO.jpg" alt="Foto do professor e alunos com premiação do Agrinho" />
-    <img src="https://i.imgur.com/HUNjReT.jpg" alt="Crianças no campo, participando do Agrinho" />
-    <img src="https://i.imgur.com/y1Dd60a.jpg" alt="Atividades escolares do programa Agrinho" />
-  </section>
 
-  <nav class="links" aria-label="Links importantes do Programa Agrinho">
-    <a href="https://www.senarpr.org.br" target="_blank" rel="noopener noreferrer" tabindex="0" aria-label="Site oficial do SENAR Paraná">Site oficial do SENAR Paraná</a>
-    <a href="https://www.faep.com.br" target="_blank" rel="noopener noreferrer" tabindex="0" aria-label="Site oficial da FAEP">Site oficial da FAEP</a>
-    <a href="https://www.programaagrinho.com.br" target="_blank" rel="noopener noreferrer" tabindex="0" aria-label="Site oficial do Programa Agrinho">Site oficial do Programa Agrinho</a>
-  </nav>
+  <div class="links">
+    <a href="https://www.flickr.com/photos/agenciabrasilia/53765054880" target="_blank" rel="noopener noreferrer">
+      Agência Brasília via Flickr (Imagem 1)
+    </a>
+    <a href="https://www.sistemafaep.org.br/agrinho/" target="_blank" rel="noopener noreferrer">
+      Site oficial do Programa Agrinho
+    </a>
+    <a href="https://pxhere.com/pt/photo/1516021" target="_blank" rel="noopener noreferrer">
+      pxhere.com (Imagem 2)
+    </a>
+  </div>
 
-  <footer>© 2025 Programa Agrinho - Sistema FAEP | Todos os direitos reservados</footer>
-
-  <script>
-    // Mostrar imagens com efeito fade-in ao carregar a página
-    window.addEventListener('load', () => {
-      const imagens = document.querySelectorAll('.imagens-container img');
-      imagens.forEach((img, i) => {
-        setTimeout(() => {
-          img.classList.add('aparecer');
-        }, i * 400);
-      });
-    });
-  </script>
+  <footer>
+    Desenvolvido por Maria Eduarda Ribeiro Inczmionka
+  </footer>
 
 </body>
 </html>
